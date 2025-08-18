@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuento</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!--Logo-->
+</head>
+<body>
+    <!-- Menú de Opciones -->
+    <header class="banner">
+        <div class="banner-content">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <h1>TecnoStore</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html">Nuestra Tienda</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contactenos.html">Contáctenos</a></li>
+                    <li><a href="cotizacion.html">Cotización</a></li>
+                    <li><a href="cuento.html">Diseña tu cuento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Diseño de Cuento -->
+    <section id="cuento" class="section">
+        <div class="container_cuento">
+            <div class="header">
+                <h2>✨Diseña de Cuento✨</h2>
+            </div>
+            
+            <!--Formulario princial-->
+            <form class="form-section" id="storyForm">
+                    <div class="form-group">
+                        <label for="nombres">Nombres y Apellidos <span class="required">*</span></label>
+                        <input type="text" id="nombres" name="nombres" required placeholder="Ej: María González">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apodo">Apodo <span class="required">*</span></label>
+                        <input type="text" id="apodo" name="apodo" required placeholder="Ej: Comandante">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="colorCabello">Color del Cabello<span class="required">*</span></label>
+                        <input type="text" id="colorCabello" name="colorCabello" required placeholder="Ej: Negro, Castaño, Rubio, Pelirrojo, Gris...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="colorOjos">Color de los ojos<span class="required">*</span></label>
+                        <input type="text" id="colorOjos" name="colorOjos" required placeholder="Ej: Negro, Café, Verde, Azul, Gris...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edad">Edad<span class="required">*</span></label>
+                        <input type="number" id="edad" name="edad" required placeholder="Ej: 25">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hobby">Hobby<span class="required">*</span></label>
+                        <input type="text" id="hobby" name="hobby" required placeholder="Ej: Leer">
+                    </div>
+
+                    <button type="submit" class="submit-btn">📖 Generar Mi Cuento</button>
+            </form>
+
+        <div class="story-section" id="storySection">
+            <div class="story-content">
+                <h2 class="story-title">📖Tu Historia Personalizada📖</h2>
+                <div id="storyText">
+                    <!--Este div es para la generación del cuento-->
+                </div>
+            </div>
+                <button type="button" class="reset-btn" onclick="resetForm()">🔄 Crear Otro Cuento</button>
+            </div>
+        </div>
+
+        <!-- JavaScript básico para generar el cuento -->
+        <script>
+        document.getElementById('storyForm').addEventListener('submit', function(e) 
+        {
+            e.preventDefault();
+            
+            // Obtener los valores del formulario
+            const nombres = document.getElementById('nombres').value;
+            const apodo = document.getElementById('apodo').value;
+            const colorCabello = document.getElementById('colorCabello').value;
+            const colorOjos = document.getElementById('colorOjos').value;
+            const edad = document.getElementById('edad').value;
+            const hobby = document.getElementById('hobby').value;
+            
+            // Validar que solo se ingrese un hobby
+            if (hobby.includes(',') || hobby.includes(';') || hobby.includes('y')) {
+                alert('⚠️ Advertencia: Por favor ingresa solo UN hobby. No uses comas, punto y coma o la palabra "y" para separar múltiples hobbies.');
+                return;
+            }
+            
+            // Generar el cuento
+            const cuento = generarCuento(nombres, apodo, colorCabello, colorOjos, edad, hobby);
+            
+            // Mostrar el cuento
+            document.getElementById('storyText').innerHTML = cuento;
+            document.getElementById('storySection').classList.add('show');
+            
+            // Hacer scroll hacia el cuento
+            document.getElementById('storySection').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        function generarCuento(nombres, apodo, colorCabello, colorOjos, edad, hobby) {
+            const cuentos = [
+                `Érase una vez, en un lugar mágico, vivía <strong>${nombres}</strong>, a quien todos conocían cariñosamente como <strong>${apodo}</strong>. Con su hermoso cabello <strong>${colorCabello}</strong> que brillaba bajo el sol y sus ojos <strong>${colorOjos}</strong> que parecían contener estrellas, <strong>${apodo}</strong> tenía <strong>${edad}</strong> años de edad y una pasión que lo definía: <strong>${hobby}</strong>.<br><br>
+                
+                Cada día, <strong>${apodo}</strong> dedicaba horas a perfeccionar su arte en <strong>${hobby}</strong>. Sus amigos siempre decían que cuando practicaba, el mundo parecía detenerse para admirar su dedicación. El cabello <strong>${colorCabello}</strong> de <strong>${apodo}</strong> bailaba con el viento mientras se concentraba en su actividad favorita, y sus ojos <strong>${colorOjos}</strong> brillaban con una intensidad que iluminaba todo a su alrededor.<br><br>
+                
+                Con el tiempo, <strong>${apodo}</strong> se convirtió en un maestro de <strong>${hobby}</strong>, inspirando a otros a seguir sus sueños. Su historia nos recuerda que la pasión y la dedicación pueden transformar cualquier hobby en algo extraordinario. Y así, <strong>${nombres}</strong>, conocido como <strong>${apodo}</strong>, vivió felizmente dedicándose a lo que más amaba: <strong>${hobby}</strong>.`,
+
+                `En un bosque encantado, habitaba una persona muy especial llamada <strong>${nombres}</strong>. Sus amigos la conocían como <strong>${apodo}</strong>, y era famosa por su extraordinario cabello <strong>${colorCabello}</strong> que parecía tener vida propia. Sus ojos <strong>${colorOjos}</strong> reflejaban la sabiduría de sus <strong>${edad}</strong> años de experiencia.<br><br>
+                
+                <strong>${apodo}</strong> tenía un don único: su pasión por <strong>${hobby}</strong>. Cada mañana, antes de que el sol saliera, ya estaba practicando y perfeccionando sus habilidades. El bosque entero se llenaba de música cuando <strong>${apodo}</strong> se dedicaba a <strong>${hobby}</strong>, y los animales se acercaban para observar con asombro.<br><br>
+                
+                Con el tiempo, <strong>${apodo}</strong> se convirtió en una leyenda en el bosque. Su cabello <strong>${colorCabello}</strong> brillaba como nunca antes, y sus ojos <strong>${colorOjos}</strong> contenían la magia de miles de historias. La historia de <strong>${nombres}</strong>, el gran maestro de <strong>${hobby}</strong>, se contaba de generación en generación.`,
+
+                `Hace mucho tiempo, en una ciudad llena de sueños, vivía <strong>${nombres}</strong>. Todos la llamaban <strong>${apodo}</strong>, y su presencia iluminaba cualquier lugar donde estuviera. Su cabello <strong>${colorCabello}</strong> era su sello distintivo, y sus ojos <strong>${colorOjos}</strong> contenían la profundidad de sus <strong>${edad}</strong> años de vida.<br><br>
+                
+                <strong>${apodo}</strong> tenía un secreto: su amor incondicional por <strong>${hobby}</strong>. Cada tarde, después de sus responsabilidades, se sumergía completamente en su pasión. El tiempo parecía detenerse cuando <strong>${apodo}</strong> se dedicaba a <strong>${hobby}</strong>, y su cabello <strong>${colorCabello}</strong> brillaba con una luz especial.<br><br>
+                
+                Con dedicación y perseverancia, <strong>${apodo}</strong> transformó su hobby en algo extraordinario. Sus ojos <strong>${colorOjos}</strong> brillaban con orgullo cada vez que alguien admiraba su trabajo. La historia de <strong>${nombres}</strong>, conocida como <strong>${apodo}</strong>, se convirtió en un ejemplo de cómo seguir los sueños puede llevar a una vida llena de felicidad y realización personal.`
+            ];
+            
+            // Seleccionar un cuento aleatorio
+            const cuentoAleatorio = cuentos[Math.floor(Math.random() * cuentos.length)];
+            return cuentoAleatorio;
+        }
+        
+        function resetForm() {
+            // Limpiar el formulario
+            document.getElementById('storyForm').reset();
+            
+            // Ocultar la sección del cuento
+            document.getElementById('storySection').classList.remove('show');
+            
+            // Hacer scroll hacia arriba
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Validación en tiempo real para el campo hobby
+        document.getElementById('hobby').addEventListener('input', function() {
+            const hobbyValue = this.value;
+            const warningDiv = document.getElementById('hobbyWarning');
+            
+            // Crear o actualizar el mensaje de advertencia
+            if (hobbyValue.includes(',') || hobbyValue.includes(';') || hobbyValue.includes('y')) {
+                if (!warningDiv) {
+                    const warning = document.createElement('div');
+                    warning.id = 'hobbyWarning';
+                    warning.style.color = '#ff6b6b';
+                    warning.style.fontSize = '14px';
+                    warning.style.marginTop = '5px';
+                    warning.innerHTML = '⚠️ Solo ingresa UN hobby, no múltiples';
+                    this.parentNode.appendChild(warning);
+                }
+            } else {
+                if (warningDiv) {
+                    warningDiv.remove();
+                }
+            }
+        });
+        </script>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TecnoStore</h3>
+                    <p>Innovación y Sostenibilidad en Tecnología</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#nuestra-tienda">Nuestra Tienda</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contactenos.html">Contáctenos</a></li>
+                        <li><a href="cotizacion.html">Cotización</a></li>
+                        <li><a href="cuento.html">Diseña tu cuento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>WhatsApp: +57 32056790938</p>
+                    <p>Email: info@tecnostore.co</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TecnoStore. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

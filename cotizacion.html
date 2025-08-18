@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contectenos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!--Logo-->
+</head>
+<body>
+    <!-- Menú de Opciones -->
+    <header class="banner">
+        <div class="banner-content">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <h1>TecnoStore</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html">Nuestra Tienda</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contactenos.html">Contáctenos</a></li>
+                    <li><a href="cotizacion.html">Cotización</a></li>
+                    <li><a href="cuento.html">Diseña tu cuento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Sección Solicitud de Cotización -->
+    <section id="cotizacion" class="section">
+        <div class="container">
+            <h2>Solicitud de Cotización</h2>
+            <div class="cotizacion-content">
+                <div class="cotizacion-info">
+                    <h3>Solicita tu cotización personalizada</h3>
+                    <p>Completa el formulario y nuestro equipo te contactará con una cotización personalizada según tus necesidades.</p>
+                </div>
+                <form class="cotizacion-form" id="cotizacionForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoría de producto</label>
+                        <select id="categoria" name="categoria">
+                            <option value="">Selecciona una categoría</option>
+                            <option value="laptops">Laptops</option>
+                            <option value="desktops">Computadores de escritorio</option>
+                            <option value="tablets">Tablets</option>
+                            <option value="smartphones">Smartphones</option>
+                            <option value="accesorios">Accesorios</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción de necesidades</label>
+                        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Describe qué necesitas y para qué lo usarás..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="presupuesto">Presupuesto aproximado</label>
+                        <select id="presupuesto" name="presupuesto">
+                            <option value="">Selecciona un rango</option>
+                            <option value="menos-100">Menos de $100.000</option>
+                            <option value="100-300">$100.000 - $300.000</option>
+                            <option value="300-500">$300.000 - $500.000</option>
+                            <option value="500-1000">$500.000 - $1.000.000</option>
+                            <option value="mas-1000">Más de $1.000.000</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TecnoStore</h3>
+                    <p>Innovación y Sostenibilidad en Tecnología</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#nuestra-tienda">Nuestra Tienda</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contactenos.html">Contáctenos</a></li>
+                        <li><a href="cotizacion.html">Cotización</a></li>
+                        <li><a href="cuento.html">Diseña tu cuento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>WhatsApp: +57 32056790938</p>
+                    <p>Email: info@tecnostore.co</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TecnoStore. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
