@@ -101,6 +101,4 @@ Incluye tablas para cotizaciones y productos, con relaciones entre ellos. Ver ar
 ## 👨‍💻 Autor
 
 **Cristian Camilo Quintana**  
-UCN 
-Ingenieria Informatica
-Lenguaje de Programación para la Web - Proyecto académico
+UCN - Ingenieria Informatica - Lenguaje de Programación para la Web - Proyecto académico
