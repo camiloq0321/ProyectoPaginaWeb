@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuento</title>
+    <link rel="stylesheet" href="/CSS/cuento.css">
+    <script src="/JavaScript/cuento.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!--Logo-->
+</head>
+<body>
+    <!-- Menú de Opciones -->
+    <header class="banner">
+        <div class="banner-content">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <h1>TecnoStore</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/index.html">Nuestra Tienda</a></li>
+                    <li><a href="/contenido/servicios.html">Servicios</a></li>
+                    <li><a href="/contenido/contactenos.html">Contáctenos</a></li>
+                    <li><a href="/contenido/cotizacion.html">Cotización</a></li>
+                    <li><a href="/contenido/cuento.html">Diseña tu cuento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Diseño de Cuento -->
+    <section id="cuento" class="section">
+        <div class="container_cuento">
+            <div class="header">
+                <h2>✨Diseña de Cuento✨</h2>
+            </div>
+            
+            <!--Formulario princial-->
+            <form class="form-section" id="storyForm">
+                    <div class="form-group">
+                        <label for="nombres">Nombres y Apellidos <span class="required">*</span></label>
+                        <input type="text" id="nombres" name="nombres" required placeholder="Ej: María González">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apodo">Apodo <span class="required">*</span></label>
+                        <input type="text" id="apodo" name="apodo" required placeholder="Ej: Comandante">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="colorCabello">Color del Cabello<span class="required">*</span></label>
+                        <input type="text" id="colorCabello" name="colorCabello" required placeholder="Ej: Negro, Castaño, Rubio, Pelirrojo, Gris...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="colorOjos">Color de los ojos<span class="required">*</span></label>
+                        <input type="text" id="colorOjos" name="colorOjos" required placeholder="Ej: Negro, Café, Verde, Azul, Gris...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edad">Edad<span class="required">*</span></label>
+                        <input type="text" id="edad" name="edad" required placeholder="Ej: 25">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hobby">Hobby<span class="required">*</span></label>
+                        <input type="text" id="hobby" name="hobby" required placeholder="Ej: Leer">
+                    </div>
+
+                    <button type="submit" class="submit-btn">📖 Generar Mi Cuento</button>
+            </form>
+
+        <div class="story-section" id="storySection">
+            <div class="story-content">
+                <h2 class="story-title">📖Tu Historia Personalizada📖</h2>
+                <div id="storyText">
+                    <!--Este div es para la generación del cuento-->
+                </div>
+            </div>
+                <button type="button" class="reset-btn" onclick="resetForm()">🔄 Crear Otro Cuento</button>
+            </div>
+        </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TecnoStore</h3>
+                    <p>Innovación y Sostenibilidad en Tecnología</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/index.html">Nuestra Tienda</a></li>
+                        <li><a href="/contenido/servicios.html">Servicios</a></li>
+                        <li><a href="/contenido/contactenos.html">Contáctenos</a></li>
+                        <li><a href="/contenido/cotizacion.html">Cotización</a></li>
+                        <li><a href="/contenido/cuento.html">Diseña tu cuento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>WhatsApp: +57 32056790938</p>
+                    <p>Email: info@tecnostore.co</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TecnoStore. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
