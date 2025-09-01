@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Cotizacion</title>
+    <link rel="stylesheet" href="/CSS/resultado.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!--Logo-->
+</head>
+<body>
+    <!-- Menú de Opciones -->
+    <header class="banner">
+        <div class="banner-content">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <h1>TecnoStore</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/index.html">Nuestra Tienda</a></li>
+                    <li><a href="/contenido/servicios.html">Servicios</a></li>
+                    <li><a href="/contenido/contactenos.html">Contáctenos</a></li>
+                    <li><a href="/contenido/cotizacion.html">Cotización</a></li>
+                    <li><a href="/contenido/cuento.html">Diseña tu cuento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container_resultado">
+            <div class="header">
+                <h2>Resumen de Cotización</h2>
+                <p>Gracias por tu solicitud. Aquí están los detalles:</p>
+            </div>
+        
+            <div class="form-section">
+                <h3>Datos del Cliente</h3>
+                <p><strong>Nombre:</strong> <%= cotizacion.nombre %></p>
+                <p><strong>Ciudad:</strong> <%= cotizacion.ciudad %></p>
+                <p><strong>Dirección:</strong> <%= cotizacion.direccion %></p>
+                <p><strong>Teléfono:</strong> <%= cotizacion.telefono %></p>
+            </div>
+        
+            <div class="products">
+                <h3>Productos Cotizados</h3>
+                <table class="tabla_final" border="1">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Total</th>
+                    </tr>
+                    <% productos.forEach(p => { %>
+                        <tr>
+                            <td><%= p.producto %></td>
+                            <td><%= p.cantidad %></td>
+                            <td>$<%= Number(p.precio_unitario).toFixed(2) %></td>
+                            <td>$<%= Number(p.precio_total).toFixed(2) %></td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>
+
+            <div class="form-buttons">
+                <button type="button" class="regreso-btn" onclick="window.location.href='/contenido/cotizacion.html'">Volver a Cotizacion</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TecnoStore</h3>
+                    <p>Innovación y Sostenibilidad en Tecnología</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/index.html">Nuestra Tienda</a></li>
+                        <li><a href="/contenido/servicios.html">Servicios</a></li>
+                        <li><a href="/contenido/contactenos.html">Contáctenos</a></li>
+                        <li><a href="/contenido/cotizacion.html">Cotización</a></li>
+                        <li><a href="/contenido/cuento.html">Diseña tu cuento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>WhatsApp: +57 32056790938</p>
+                    <p>Email: info@tecnostore.co</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TecnoStore. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
