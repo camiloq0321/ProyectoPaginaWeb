@@ -13,7 +13,7 @@ TecnoStore es una aplicación web desarrollada en Node.js que simula una tienda 
 
 ## 📁 Estructura del Proyecto
 ```
-Pagina Web/
+PaginaWeb_TecnoStore/
 ├──conexion.js              # Configuraión del servidor y base de datos
 ├──index.html               # Página Principal
 ├──package.json             # Dependencias del proyecto
@@ -102,3 +102,4 @@ Incluye tablas para cotizaciones y productos, con relaciones entre ellos. Ver ar
 
 **Cristian Camilo Quintana**  
 UCN - Ingenieria Informatica - Lenguaje de Programación para la Web - Proyecto académico
+
